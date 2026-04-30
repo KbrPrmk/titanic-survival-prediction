@@ -1,7 +1,8 @@
 # 🚢 Titanic Survival Prediction (Machine Learning Project)
-
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![ML](https://img.shields.io/badge/MachineLearning-Project-green
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Project-green)
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikit-learn)
+![Model](https://img.shields.io/badge/Model-Random%20Forest-darkgreen)
 
 ## 📌 Project Overview
 
@@ -19,10 +20,53 @@ To build a classification model that predicts whether a passenger survived:
 
 ## 📂 Dataset
 
-- Source: Kaggle Titanic Competition
-- Files used:
-  - `train.csv`
-  - `test.csv`
+This project uses the Titanic dataset from the Kaggle Titanic Competition.
+
+**Source:** https://www.kaggle.com/competitions/titanic
+
+### 📊 Dataset Description
+
+The dataset contains information about passengers aboard the Titanic, including demographic details and travel information. It is used to predict whether a passenger survived the disaster.
+
+### 📁 Files Used
+
+- `train.csv` → Contains features and target variable (Survived)
+- `test.csv` → Contains features only (used for prediction)
+
+---
+
+### 🧾 Key Features
+
+| Feature   | Description |
+|----------|------------|
+| Pclass   | Passenger class (1 = Upper, 3 = Lower) |
+| Sex      | Gender of passenger |
+| Age      | Age in years |
+| SibSp    | Number of siblings/spouses aboard |
+| Parch    | Number of parents/children aboard |
+| Fare     | Ticket fare |
+| Embarked | Port of embarkation |
+
+---
+
+### 🎯 Target Variable
+
+| Variable | Meaning |
+|---------|--------|
+| Survived | 0 = Did not survive, 1 = Survived |
+
+---
+
+### ⚠️ Data Challenges
+
+- Missing values in:
+  - Age
+  - Fare
+  - Embarked  
+
+- Categorical variables required encoding:
+  - Sex
+  - Embarked  
 
 ---
 
@@ -44,7 +88,6 @@ To build a classification model that predicts whether a passenger survived:
 - `Fare` → filled with median (test set)
 - `Embarked` → filled with mode
 
----
 
 ### Encoding
 
@@ -59,7 +102,6 @@ To build a classification model that predicts whether a passenger survived:
     - Embarked_Q
     - Embarked_S
 
----
 
 ### Feature Selection
 
@@ -93,7 +135,7 @@ StandardScaler applied to:
 
 ## 🤖 Model
 
-Random Forest Classifier
+### Random Forest Classifier
 
 Model parameters:
 ```bash
@@ -105,6 +147,17 @@ random_state = 42
 
 ---
 
+## 🤖 Why Random Forest?
+
+Random Forest was chosen because:
+
+- Handles both numerical and categorical features well  
+- Reduces overfitting through ensemble learning  
+- Performs well on structured/tabular datasets like Titanic  
+- Robust to noise and missing values
+  
+---
+
 ## 📈 Model Evaluation
 
 * Method: 5-Fold Cross Validation
@@ -112,19 +165,17 @@ random_state = 42
 Output example:
 
 ```
-Cross-Validation Scores: [...]
-Average Accuracy: XX%
+Cross-Validation Scores: [0.7877095  0.78651685 0.84831461 0.80337079 0.80337079]
+Average Accuracy: 80.59%
 ```
-
-👉 Model performance is evaluated using cross-validation instead of train-test split.
 
 ---
 
 ## 📤 Prediction & Output
 
-Predictions generated on test dataset
-* Output file:
-* submission.csv
+Predictions are generated on the test dataset.
+
+- Output file: `submission.csv`
 
 Format:
 | PassengerId | Survived |
@@ -135,8 +186,8 @@ Format:
 ## 🚀 How to Run
 
 ```bash
-git clone https://github.com/yourusername/titanic-ml-project.git
-cd titanic-ml-project
+git clone https://github.com/KbrPrmk/titanic-survival-prediction.git
+cd titanic-survival-prediction
 ```
 
 ```bash
@@ -171,9 +222,10 @@ titanic-disaster.ipynb
 
 ---
 
-✨ Author
+## ⭐ Project Status
 
-Developed by Kübra Parmak
+✔ Completed  
 
 ---
 
+Developed by **Kübra Parmak**
